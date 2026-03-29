@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "title": "Restauro — Restaurarea articolelor din piele în Chișinău",
+    "description": "Restaurăm cu grijă și pasiune articolele din piele — interioare auto, mobilă, încălțăminte, îmbrăcăminte și accesorii. Chișinău, Moldova.",
+    "ogImage": "Restauro — Restaurare profesională a pielii în Chișinău"
+  },
+  "seo": {
+    "homeTitle": "Restauro — Restaurarea articolelor din piele în Chișinău",
+    "contactTitle": "Contact — Restauro | Programare restaurare piele Chișinău",
+    "contactDescription": "Contactați-ne pentru o evaluare gratuită. Sunați sau completați formularul pentru a programa restaurarea articolelor din piele. Chișinău, Moldova.",
+    "portfolioTitle": "Portofoliu — Restauro | Lucrări de restaurare a pielii",
+    "portfolioDescription": "Galerie cu lucrări de restaurare a pielii — interioare auto, canapele, fotolii și accesorii. Rezultate înainte și după.",
+    "autoInteriorTitle": "Restaurare interior auto din piele — Restauro Chișinău",
+    "autoInteriorDescription": "Restaurare profesională a scaunelor, volanului, cotierelor și panourilor din piele auto. Eliminare zgârieturi, crăpături și decolorări.",
+    "furnitureTitle": "Restaurare mobilă din piele — Restauro Chișinău",
+    "furnitureDescription": "Restaurare canapele, fotolii și mobilier tapițat cu piele. Eliminare crăpături, pete și uzură. Revopsire profesională.",
+    "otherServicesTitle": "Alte servicii de restaurare piele — Restauro Chișinău",
+    "otherServicesDescription": "Restaurare îmbrăcăminte, încălțăminte, accesorii din piele și curățare profesională. Servicii complete de îngrijire a pielii.",
+    "heroImageAlt": "Interior auto din piele restaurat profesional de Restauro",
+    "furnitureImageAlt": "Canapea din piele restaurată profesional de Restauro",
+    "furnitureDetailImageAlt": "Detaliu canapea din piele după restaurare profesională",
+    "beforeAfterAutoSeatAlt": "Scaun auto din piele înainte și după restaurare",
+    "beforeAfterArmrestAlt": "Cotieră auto înainte și după restaurare",
+    "breadcrumbHome": "Acasă"
+  },
+  "nav": {
+    "home": "Acasă",
+    "services": "Servicii",
+    "autoInterior": "Interior auto",
+    "furniture": "Mobilă",
+    "otherServices": "Alte servicii",
+    "portfolio": "Portofoliu",
+    "contact": "Contact",
+    "callNow": "Sunați acum"
+  },
+  "hero": {
+    "title": "Restaurăm pielea la calitatea de showroom",
+    "subtitle": "Dăm o a doua viață articolelor din piele — reparăm și restaurăm cu grijă și pasiune.",
+    "label": "Restaurare premium a pielii",
+    "cta": "Sunați acum",
+    "ctaSecondary": "Vezi lucrările noastre"
+  },
+  "stats": {
+    "years": "ani de experiență",
+    "projects": "proiecte realizate",
+    "clients": "clienți mulțumiți"
+  },
+  "services": {
+    "title": "Serviciile noastre",
+    "subtitle": "Soluții profesionale de restaurare pentru orice articol din piele",
+    "autoInterior": {
+      "title": "Interior auto",
+      "description": "Restaurarea scaunelor, volanului, cotierelor și a panourilor din piele ale automobilului dumneavoastră.",
+      "longDescription": "Scaunele auto din piele sunt supuse zilnic la uzură intensă — razele solare, temperaturile extreme și contactul constant își lasă amprenta. Noi redăm aspectul original al interiorului, de la scaune și volan până la cotiere și panouri laterale. Folosim doar produse de top, testate de specialiști internaționali.",
+      "features": ["Restaurare scaune din piele", "Reparare și vopsire volan", "Restaurare cotiere și panouri", "Eliminare zgârieturi și crăpături"]
+    },
+    "furniture": {
+      "title": "Mobilă",
+      "description": "Restaurarea canapelelor, fotoliilor și a altor piese de mobilier tapițate cu piele.",
+      "longDescription": "Mobila din piele este o investiție care merită îngrijire. Cu timpul, canapelele și fotoliile pot prezenta crăpături, decolorări sau uzură vizibilă. Restaurăm aspectul original al mobilei dumneavoastră, readucând pielea la strălucirea de altădată.",
+      "features": ["Restaurare canapele din piele", "Reparare fotolii", "Eliminare crăpături și pete", "Revopsire și recondiționare"]
+    },
+    "clothing": {
+      "title": "Îmbrăcăminte",
+      "description": "Restaurarea gecilor, jachetelor și a altor articole vestimentare din piele."
+    },
+    "footwear": {
+      "title": "Încălțăminte",
+      "description": "Restaurarea pantofilor, gheatelor și a altor articole de încălțăminte din piele."
+    },
+    "accessories": {
+      "title": "Accesorii",
+      "description": "Restaurarea genților, portofelelor, curelelor și a altor accesorii din piele."
+    },
+    "cleaning": {
+      "title": "Curățare profesională",
+      "description": "Servicii de curățare a materialelor din piele, plastic și alcantara."
+    },
+    "viewAll": "Vezi toate serviciile",
+    "requestQuote": "Solicită o evaluare"
+  },
+  "process": {
+    "title": "Cum funcționează",
+    "step1": {
+      "title": "Contactați-ne",
+      "description": "Sunați-ne pentru o consultație gratuită."
+    },
+    "step2": {
+      "title": "Evaluare gratuită",
+      "description": "Examinăm articolul și vă oferim o estimare detaliată."
+    },
+    "step3": {
+      "title": "Restaurare expertă",
+      "description": "Restaurăm cu grijă, folosind produse de top și metode profesionale."
+    }
+  },
+  "testimonials": {
+    "title": "Ce spun clienții noștri",
+    "showMore": "Mai mult",
+    "showLess": "Mai puțin",
+    "items": [
+      {
+        "name": "Dan",
+        "role": "Interior auto, Chișinău",
+        "text": "Așa arată interiorul unei mașini de 20 de ani. Mi-au vopsit scaunele și volanul. Am rămas foarte mulțumit. Lucrare de calitate și multă atenție la detalii. Recomand cu căldură."
+      },
+      {
+        "name": "Carolina D.",
+        "role": "Canapea Natuzzi, Chișinău",
+        "text": "Aveam o canapea și un fotoliu din piele Natuzzi care, după mai bine de un deceniu și cu cinci copii în casă, se deterioraseră vizibil: aveau pete și zone unde pielea era afectată de jocurile pisicilor. Datorită intervenției restauratorilor de la restauro.md, canapeaua mea arată acum ca nouă. Le mulțumesc nu doar pentru profesionalism, ci și pentru respectul față de timpul meu, motiv pentru care îi recomand fără ezitare."
+      },
+      {
+        "name": "Polina C.",
+        "role": "Fotolii și canapea, Chișinău",
+        "text": "Echipa a restaurat fotoliile și canapeaua din piele, inclusiv zgârieturile de pisică. Au lucrat eficient într-o zi, iar rezultatul a depășit toate așteptările mele. Recomand, mai ales celor care au pisici și închiriază."
+      },
+      {
+        "name": "PoPa Damian",
+        "role": "Interior auto, Chișinău",
+        "text": "Am contactat această firmă pentru prima dată și mi-au făcut o lucrare foarte complexă pe piele. Mă îngrijora că așteptările mele nu vor corespunde cu realitatea. În ziua în care am primit mașina, am înțeles că am ajuns la locul potrivit! Recomand!"
+      },
+      {
+        "name": "Alexandr V.",
+        "role": "Restaurare piele, Chișinău",
+        "text": "Băieții sunt foarte buni, tratează orice defect al pielii cu maximă grijă și profesionalism."
+      },
+      {
+        "name": "West Wheels",
+        "role": "Chișinău",
+        "text": "Top!"
+      }
+    ]
+  },
+  "gallery": {
+    "title": "Lucrările noastre",
+    "subtitle": "Rezultatele vorbesc de la sine",
+    "before": "Înainte",
+    "after": "După",
+    "filterAll": "Toate",
+    "filterAuto": "Interior auto",
+    "filterFurniture": "Mobilă",
+    "filterOther": "Altele"
+  },
+  "contact": {
+    "title": "Contactați-ne",
+    "subtitle": "Suntem aici pentru dumneavoastră",
+    "form": {
+      "name": "Numele dumneavoastră",
+      "phone": "Număr de telefon",
+      "service": "Serviciu dorit",
+      "selectService": "Alegeți un serviciu",
+      "date": "Data preferată",
+      "message": "Mesajul dumneavoastră",
+      "messagePlaceholder": "Descrieți pe scurt ce doriți să restaurați...",
+      "submit": "Trimiteți solicitarea",
+      "success": "Solicitarea a fost trimisă cu succes! Vă vom contacta în cel mai scurt timp.",
+      "error": "A apărut o eroare. Vă rugăm să ne sunați direct."
+    },
+    "info": {
+      "phone": "Telefon",
+      "email": "Email",
+      "address": "Adresă",
+      "hours": "Program"
+    },
+    "schedule": {
+      "title": "Programare",
+      "subtitle": "Alegeți o dată și o oră convenabile",
+      "confirm": "Solicită programare",
+      "note": "Programarea se confirmă telefonic"
+    }
+  },
+  "cta": {
+    "call": "Sunați",
+    "writeUs": "Scrieți-ne"
+  },
+  "footer": {
+    "rights": "Toate drepturile rezervate",
+    "tagline": ""
+  },
+  "common": {
+    "learnMore": "Află mai mult",
+    "backToHome": "Înapoi la pagina principală",
+    "pageNotFound": "Pagina nu a fost găsită",
+    "pageNotFoundDesc": "Ne pare rău, pagina pe care o căutați nu există.",
+    "monday": "Luni",
+    "tuesday": "Marți",
+    "wednesday": "Miercuri",
+    "thursday": "Joi",
+    "friday": "Vineri",
+    "saturday": "Sâmbătă",
+    "sunday": "Duminică",
+    "closed": "Închis"
+  }
+}
