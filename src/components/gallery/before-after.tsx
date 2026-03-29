@@ -63,10 +63,11 @@ export function BeforeAfter({
   return (
     <div
       ref={containerRef}
-      className="relative aspect-[4/3] overflow-hidden cursor-ew-resize select-none group"
+      className="relative aspect-[4/3] overflow-hidden cursor-ew-resize select-none group touch-none"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp}
       onKeyDown={handleKeyDown}
       tabIndex={0}
       role="slider"
@@ -86,7 +87,7 @@ export function BeforeAfter({
 
       {/* BEFORE image — fills entire container, clipped from the left */}
       <div
-        className="absolute inset-0 overflow-hidden"
+        className="absolute inset-0 overflow-hidden will-change-[clip-path]"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
       >
         <Image
@@ -100,7 +101,7 @@ export function BeforeAfter({
 
       {/* Slider line + handle */}
       <div
-        className="absolute top-0 bottom-0 w-0.5 bg-white/80 z-10 pointer-events-none"
+        className="absolute top-0 bottom-0 w-0.5 bg-white/80 z-10 pointer-events-none will-change-transform"
         style={{ left: `${position}%` }}
       >
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/95 shadow-2xl shadow-black/40 flex items-center justify-center backdrop-blur-sm border border-white/50">
