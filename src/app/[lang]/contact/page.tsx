@@ -103,10 +103,13 @@ export default async function ContactPage({
               <ArrowLeft className="w-4 h-4" />
               {dict.common.backToHome}
             </Link>
-            <h1 className="text-4xl sm:text-5xl">
+            <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
+              <div className="luxury-divider" />
+            </div>
+            <h1 className="text-3xl sm:text-5xl">
               {dict.contact.title}
             </h1>
-            <p className="mt-4 text-base text-muted font-light max-w-2xl mx-auto lg:mx-0">
+            <p className="mt-4 text-sm sm:text-base text-muted font-light max-w-2xl mx-auto lg:mx-0">
               {dict.contact.subtitle}
             </p>
           </div>
@@ -118,7 +121,7 @@ export default async function ContactPage({
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
             {/* Form */}
             <div className="lg:col-span-3">
-              <div className="bg-surface border border-borderp-8">
+              <div className="bg-surface border border-border p-6 sm:p-8">
                 <ContactForm dict={dict} />
               </div>
             </div>
@@ -129,7 +132,7 @@ export default async function ContactPage({
               <div className="space-y-4">
                 <a
                   href={`tel:${SITE.phone}`}
-                  className="flex items-center gap-4 p-5 bg-surface border border-borderhover:border-accent/30 transition-colors group"
+                  className="flex items-center gap-4 p-5 bg-surface border border-border hover:border-accent/30 transition-colors group"
                 >
                   <div className="w-12 h-12 bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5 text-accent" />
@@ -146,7 +149,7 @@ export default async function ContactPage({
 
                 <a
                   href={`mailto:${SITE.email}`}
-                  className="flex items-center gap-4 p-5 bg-surface border border-borderhover:border-accent/30 transition-colors group"
+                  className="flex items-center gap-4 p-5 bg-surface border border-border hover:border-accent/30 transition-colors group"
                 >
                   <div className="w-12 h-12 bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
                     <Mail className="w-5 h-5 text-accent" />
@@ -161,7 +164,7 @@ export default async function ContactPage({
                   </div>
                 </a>
 
-                <div className="flex items-center gap-4 p-5 bg-surface border border-border ">
+                <div className="flex items-center gap-4 p-5 bg-surface border border-border">
                   <div className="w-12 h-12 bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
                     <MapPin className="w-5 h-5 text-accent" />
                   </div>
@@ -173,7 +176,7 @@ export default async function ContactPage({
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4 p-5 bg-surface border border-border ">
+                <div className="flex items-center gap-4 p-5 bg-surface border border-border">
                   <div className="w-12 h-12 bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0">
                     <Clock className="w-5 h-5 text-accent" />
                   </div>
