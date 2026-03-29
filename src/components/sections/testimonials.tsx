@@ -84,7 +84,15 @@ export function Testimonials({ dict }: TestimonialsProps) {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
-  const isHovering = useRef(false);
+  const userInteracted = useRef(false);
+
+  const stopAutoScroll = useCallback(() => {
+    userInteracted.current = true;
+    if (autoScrollRef.current) {
+      clearInterval(autoScrollRef.current);
+      autoScrollRef.current = null;
+    }
+  }, []);
 
   const checkScroll = useCallback(() => {
     const el = scrollRef.current;
@@ -98,15 +106,18 @@ export function Testimonials({ dict }: TestimonialsProps) {
     if (!el) return;
 
     const initTimer = setTimeout(() => {
-      const cardWidth = 356;
-      el.scrollTo({ left: cardWidth * 2, behavior: "smooth" });
+      el.scrollTo({ left: 356 * 2, behavior: "smooth" });
       setTimeout(checkScroll, 500);
     }, 300);
 
     el.addEventListener("scroll", checkScroll, { passive: true });
 
+    const handleUserScroll = () => { if (!userInteracted.current) stopAutoScroll(); };
+    el.addEventListener("pointerdown", handleUserScroll);
+    el.addEventListener("wheel", handleUserScroll, { passive: true });
+
     autoScrollRef.current = setInterval(() => {
-      if (isHovering.current || !el) return;
+      if (userInteracted.current || !el) return;
       const atEnd = el.scrollLeft >= el.scrollWidth - el.clientWidth - 10;
       if (atEnd) {
         el.scrollTo({ left: 0, behavior: "smooth" });
@@ -118,12 +129,15 @@ export function Testimonials({ dict }: TestimonialsProps) {
     return () => {
       clearTimeout(initTimer);
       el.removeEventListener("scroll", checkScroll);
+      el.removeEventListener("pointerdown", handleUserScroll);
+      el.removeEventListener("wheel", handleUserScroll);
       if (autoScrollRef.current) clearInterval(autoScrollRef.current);
     };
-  }, [checkScroll]);
+  }, [checkScroll, stopAutoScroll]);
 
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
+    stopAutoScroll();
     scrollRef.current.scrollBy({ left: direction === "left" ? -356 : 356, behavior: "smooth" });
   };
 
@@ -158,21 +172,17 @@ export function Testimonials({ dict }: TestimonialsProps) {
         </AnimateOnScroll>
       </div>
 
-      <div
-        className="relative max-w-5xl mx-auto"
-        onMouseEnter={() => { isHovering.current = true; }}
-        onMouseLeave={() => { isHovering.current = false; }}
-      >
+      <div className="relative max-w-5xl mx-auto">
         {canScrollLeft && (
           <button onClick={() => scroll("left")}
-            className="absolute left-1 sm:left-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center bg-background/50 border border-[#2A2622]/40 text-muted/40 hover:text-accent hover:border-accent/30 transition-all duration-300 cursor-pointer"
+            className="absolute left-1 sm:left-3 top-[140px] -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center bg-background/50 border border-[#2A2622]/40 text-muted/40 hover:text-accent hover:border-accent/30 transition-all duration-300 cursor-pointer"
             aria-label="Previous">
             <ChevronLeft className="w-3.5 h-3.5" />
           </button>
         )}
         {canScrollRight && (
           <button onClick={() => scroll("right")}
-            className="absolute right-1 sm:right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center bg-background/50 border border-[#2A2622]/40 text-muted/40 hover:text-accent hover:border-accent/30 transition-all duration-300 cursor-pointer"
+            className="absolute right-1 sm:right-3 top-[140px] -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center bg-background/50 border border-[#2A2622]/40 text-muted/40 hover:text-accent hover:border-accent/30 transition-all duration-300 cursor-pointer"
             aria-label="Next">
             <ChevronRight className="w-3.5 h-3.5" />
           </button>

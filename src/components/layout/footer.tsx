@@ -22,8 +22,8 @@ export function Footer({ lang, dict }: FooterProps) {
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-16">
 
         {/* Top: Logo — hidden on mobile, shown on desktop */}
-        <div className="hidden sm:block text-center mb-14">
-          <Link href={`/${lang}`} className="inline-flex items-center gap-2.5 justify-center">
+        <div className="hidden sm:flex sm:justify-center mb-14">
+          <Link href={`/${lang}`} className="inline-flex items-center gap-2.5">
             <Image src="/images/brand/Logo3.png" alt="Restauro" width={36} height={36} className="w-9 h-9" />
             <span className="text-lg font-light tracking-[0.25em] uppercase text-foreground">Restauro</span>
           </Link>
