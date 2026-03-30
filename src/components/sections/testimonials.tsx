@@ -56,7 +56,7 @@ function ReviewCard({ t, dict }: { t: { name: string; role: string; text: string
       {isLong && (
         <button
           onClick={() => setExpanded(!expanded)}
-          className="text-accent text-xs mb-4 hover:underline cursor-pointer shrink-0 text-left"
+          className="text-accent text-xs mt-3 mb-4 hover:underline cursor-pointer shrink-0 text-left"
         >
           {expanded ? dict.testimonials.showLess : dict.testimonials.showMore}
         </button>
