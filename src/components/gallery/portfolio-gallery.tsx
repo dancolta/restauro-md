@@ -115,13 +115,13 @@ export function PortfolioGallery({ dict }: PortfolioGalleryProps) {
       <div className="flex items-center gap-3 mb-10">
         {filters.map((f) => (
           <button key={f.key} onClick={() => setFilter(filter === f.key ? "all" : f.key)}
-            className={`px-5 py-2 text-xs tracking-[0.1em] uppercase font-medium transition-all whitespace-nowrap cursor-pointer ${filter === f.key ? "bg-accent text-accent-foreground" : "border border-[#2A2622] text-muted hover:text-foreground hover:border-accent/30"}`}>
+            className={`px-5 py-2 text-xs tracking-[0.1em] uppercase font-medium transition-all whitespace-nowrap cursor-pointer rounded ${filter === f.key ? "bg-accent text-accent-foreground" : "border border-border text-muted hover:text-foreground hover:border-accent/30"}`}>
             {f.label}
           </button>
         ))}
         {filter !== "all" && (
           <button onClick={() => setFilter("all")}
-            className="px-5 py-2 text-xs tracking-[0.1em] uppercase font-medium border border-[#2A2622] text-muted hover:text-foreground cursor-pointer">
+            className="px-5 py-2 text-xs tracking-[0.1em] uppercase font-medium border border-border text-muted hover:text-foreground cursor-pointer rounded">
             ×
           </button>
         )}

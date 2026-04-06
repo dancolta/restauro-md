@@ -29,7 +29,7 @@ function ReviewCard({ t, dict }: { t: { name: string; role: string; text: string
   const displayText = isLong && !expanded ? t.text.slice(0, TEXT_LIMIT) + "..." : t.text;
 
   return (
-    <div className="flex-shrink-0 w-[280px] sm:w-[340px] p-6 sm:p-7 bg-[#0F0E0D] border border-[#1A1816] hover:border-accent/10 snap-center flex flex-col transition-[height,border-color] duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
+    <div className="flex-shrink-0 w-[280px] sm:w-[340px] p-6 sm:p-7 bg-[#0F0E0D] border border-border hover:border-accent/10 snap-center flex flex-col transition-[height,border-color] duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
       style={{ height: expanded ? "auto" : "280px" }}
     >
       <div className="flex-1 overflow-hidden">
@@ -65,7 +65,7 @@ function ReviewCard({ t, dict }: { t: { name: string; role: string; text: string
         href={GOOGLE_REVIEWS_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-3 pt-5 mt-auto border-t border-[#1A1816] shrink-0 group/footer cursor-pointer"
+        className="flex items-center gap-3 pt-5 mt-auto border-t border-border shrink-0 group/footer cursor-pointer"
       >
         <div className="w-9 h-9 bg-accent/10 border border-accent/15 flex items-center justify-center shrink-0">
           <span className="text-xs font-medium text-accent">{t.name.charAt(0)}</span>
@@ -85,6 +85,9 @@ export function Testimonials({ dict }: TestimonialsProps) {
   const [canScrollRight, setCanScrollRight] = useState(true);
   const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
   const userInteracted = useRef(false);
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const scrollStart = useRef(0);
 
   const stopAutoScroll = useCallback(() => {
     userInteracted.current = true;
@@ -135,6 +138,36 @@ export function Testimonials({ dict }: TestimonialsProps) {
     };
   }, [checkScroll, stopAutoScroll]);
 
+  const handleDragStart = useCallback((e: React.PointerEvent) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    isDragging.current = true;
+    startX.current = e.clientX;
+    scrollStart.current = el.scrollLeft;
+    el.setPointerCapture(e.pointerId);
+    el.style.cursor = "grabbing";
+    el.style.scrollSnapType = "none";
+    stopAutoScroll();
+  }, [stopAutoScroll]);
+
+  const handleDragMove = useCallback((e: React.PointerEvent) => {
+    if (!isDragging.current || !scrollRef.current) return;
+    e.preventDefault();
+    const dx = e.clientX - startX.current;
+    scrollRef.current.scrollLeft = scrollStart.current - dx;
+  }, []);
+
+  const handleDragEnd = useCallback(() => {
+    isDragging.current = false;
+    const el = scrollRef.current;
+    if (!el) return;
+    el.style.cursor = "grab";
+    // Re-enable snap after a short delay so it settles smoothly
+    requestAnimationFrame(() => {
+      el.style.scrollSnapType = "";
+    });
+  }, []);
+
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
     stopAutoScroll();
@@ -175,14 +208,14 @@ export function Testimonials({ dict }: TestimonialsProps) {
       <div className="relative max-w-5xl mx-auto">
         {canScrollLeft && (
           <button onClick={() => scroll("left")}
-            className="absolute left-1 sm:left-3 top-[140px] -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center bg-background/50 border border-[#2A2622]/40 text-muted/40 hover:text-accent hover:border-accent/30 transition-all duration-300 cursor-pointer"
+            className="absolute left-1 sm:left-3 top-[140px] -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center bg-background/50 border border-border/40 text-muted/40 hover:text-accent hover:border-accent/30 transition-all duration-300 cursor-pointer"
             aria-label="Previous">
             <ChevronLeft className="w-3.5 h-3.5" />
           </button>
         )}
         {canScrollRight && (
           <button onClick={() => scroll("right")}
-            className="absolute right-1 sm:right-3 top-[140px] -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center bg-background/50 border border-[#2A2622]/40 text-muted/40 hover:text-accent hover:border-accent/30 transition-all duration-300 cursor-pointer"
+            className="absolute right-1 sm:right-3 top-[140px] -translate-y-1/2 z-20 w-8 h-8 flex items-center justify-center bg-background/50 border border-border/40 text-muted/40 hover:text-accent hover:border-accent/30 transition-all duration-300 cursor-pointer"
             aria-label="Next">
             <ChevronRight className="w-3.5 h-3.5" />
           </button>
@@ -194,8 +227,12 @@ export function Testimonials({ dict }: TestimonialsProps) {
         <AnimateOnScroll delay={0.15}>
           <div
             ref={scrollRef}
-            className="flex gap-4 overflow-x-auto px-6 sm:px-10 pb-4 snap-x snap-mandatory items-start"
+            className="flex gap-4 overflow-x-auto px-6 sm:px-10 pb-4 snap-x snap-mandatory items-start cursor-grab select-none touch-pan-x"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            onPointerDown={handleDragStart}
+            onPointerMove={handleDragMove}
+            onPointerUp={handleDragEnd}
+            onPointerCancel={handleDragEnd}
           >
             {dict.testimonials.items.map((t, i) => (
               <ReviewCard key={i} t={t} dict={dict} />

@@ -83,7 +83,7 @@ export function Footer({ lang, dict }: FooterProps) {
           <div className="flex items-center gap-3">
             {Object.entries(SITE.social).map(([platform, url]) => (
               <a key={platform} href={url} target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 bg-background border border-[#2A2622] flex items-center justify-center text-muted hover:text-accent hover:border-accent/40 transition-all duration-300"
+                className="w-9 h-9 bg-background border border-border flex items-center justify-center text-muted hover:text-accent hover:border-accent/40 transition-all duration-300"
                 aria-label={platform}>
                 <SocialIcon platform={platform} />
               </a>

@@ -11,8 +11,8 @@
   --color-accent-hover: var(--accent-hover);
   --color-accent-foreground: var(--accent-fg);
   --color-success: var(--success);
-  --font-sans: var(--font-montserrat);
-  --font-serif: var(--font-cormorant);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
 }
 
 :root {

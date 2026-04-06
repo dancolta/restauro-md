@@ -53,14 +53,14 @@ export function Hero({ lang, dict }: HeroProps) {
           <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 mt-12 animate-fade-in-up animation-delay-300">
             <a
               href={`tel:${SITE.phone}`}
-              className="group inline-flex items-center gap-3 bg-accent text-accent-foreground px-8 py-4 text-sm font-medium tracking-wider uppercase hover:bg-accent-hover transition-all duration-300 cursor-pointer"
+              className="group inline-flex items-center gap-3 bg-accent text-accent-foreground px-8 py-4 text-sm font-medium tracking-wider uppercase hover:bg-accent-hover transition-all duration-300 cursor-pointer rounded"
             >
               <Phone className="w-4 h-4" />
               {dict.hero.cta}
             </a>
             <Link
               href={`/${lang}/portofoliu`}
-              className="inline-flex items-center gap-3 text-foreground/70 px-8 py-4 text-sm font-light tracking-wider uppercase hover:text-accent transition-colors duration-300 border border-border hover:border-accent/40 cursor-pointer"
+              className="inline-flex items-center gap-3 text-foreground/70 px-8 py-4 text-sm font-light tracking-wider uppercase hover:text-accent transition-colors duration-300 border border-border hover:border-accent/40 cursor-pointer rounded"
             >
               {dict.hero.ctaSecondary}
             </Link>

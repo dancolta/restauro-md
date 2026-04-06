@@ -175,7 +175,7 @@ export default async function AutoInteriorPage({
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <a
                   href={`tel:${SITE.phone}`}
-                  className="inline-flex items-center justify-center gap-3 bg-accent text-accent-foreground px-8 py-4 text-sm tracking-[0.1em] uppercase font-medium hover:bg-accent-hover transition-all"
+                  className="inline-flex items-center justify-center gap-3 bg-accent text-accent-foreground px-8 py-4 text-sm tracking-[0.1em] uppercase font-medium hover:bg-accent-hover transition-all rounded"
                 >
                   <Phone className="w-5 h-5" />
                   {dict.services.requestQuote}

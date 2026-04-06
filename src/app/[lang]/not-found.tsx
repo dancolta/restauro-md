@@ -11,7 +11,7 @@ export default function NotFound() {
         </p>
         <Link
           href="/ro"
-          className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 text-xs tracking-[0.1em] uppercase font-medium hover:bg-accent-hover transition-colors cursor-pointer"
+          className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 text-xs tracking-[0.1em] uppercase font-medium hover:bg-accent-hover transition-colors cursor-pointer rounded"
         >
           Acasă
         </Link>

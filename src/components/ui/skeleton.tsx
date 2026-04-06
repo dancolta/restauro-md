@@ -1,7 +1,7 @@
 function Skeleton({ className = "" }: { className?: string }) {
   return (
     <div
-      className={`animate-pulse bg-[#1A1816] rounded ${className}`}
+      className={`animate-pulse bg-surface-hover rounded ${className}`}
     />
   );
 }
@@ -28,7 +28,7 @@ export function HeroSkeleton() {
 
 export function ServiceCardSkeleton() {
   return (
-    <div className="p-6 sm:p-8 bg-[#0F0E0D] border border-[#1A1816]">
+    <div className="p-6 sm:p-8 bg-[#0F0E0D] border border-border">
       <Skeleton className="w-10 h-10 mb-5" />
       <Skeleton className="h-6 w-3/4 mb-3" />
       <Skeleton className="h-4 w-full mb-2" />
@@ -51,7 +51,7 @@ export function SectionHeaderSkeleton() {
 
 export function ReviewCardSkeleton() {
   return (
-    <div className="flex-shrink-0 w-[280px] sm:w-[340px] h-[280px] p-6 sm:p-7 bg-[#0F0E0D] border border-[#1A1816] flex flex-col">
+    <div className="flex-shrink-0 w-[280px] sm:w-[340px] h-[280px] p-6 sm:p-7 bg-[#0F0E0D] border border-border flex flex-col">
       <div className="flex items-center justify-between mb-4">
         <div className="flex gap-1">
           {Array.from({ length: 5 }).map((_, i) => (
@@ -64,7 +64,7 @@ export function ReviewCardSkeleton() {
       <Skeleton className="h-4 w-full mb-2" />
       <Skeleton className="h-4 w-3/4 mb-2" />
       <Skeleton className="h-4 w-1/2" />
-      <div className="flex items-center gap-3 pt-5 mt-auto border-t border-[#1A1816]">
+      <div className="flex items-center gap-3 pt-5 mt-auto border-t border-border">
         <Skeleton className="w-9 h-9 shrink-0" />
         <div className="flex-1">
           <Skeleton className="h-4 w-24 mb-1" />

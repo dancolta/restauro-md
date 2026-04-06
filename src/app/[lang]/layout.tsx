@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Cormorant } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import { notFound } from "next/navigation";
 import { getDictionary, hasLocale } from "./dictionaries";
 import { LOCALES, SITE } from "@/lib/constants";
@@ -10,16 +10,16 @@ import "../globals.css";
 
 const BASE_URL = "https://restauro.md";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin", "latin-ext", "cyrillic"],
-  weight: ["300", "400", "500", "600"],
+  display: "swap",
 });
 
-const cormorant = Cormorant({
-  variable: "--font-cormorant",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin", "latin-ext", "cyrillic"],
-  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export async function generateStaticParams() {
@@ -104,7 +104,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={lang}
-      className={`${montserrat.variable} ${cormorant.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <Header lang={lang} dict={dict} />

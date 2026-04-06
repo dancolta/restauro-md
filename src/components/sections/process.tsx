@@ -35,7 +35,7 @@ export function Process({ dict }: ProcessProps) {
               const Icon = step.icon;
               return (
                 <div key={index} className="text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 border border-[#2A2622] mb-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 border border-border mb-6">
                     <Icon className="w-6 h-6 text-accent" />
                   </div>
                   <h3 className="text-sm font-medium tracking-wider mb-3">{step.title}</h3>

@@ -8,7 +8,7 @@ interface ContactFormProps {
   dict: Dictionary;
 }
 
-const inputClass = "w-full px-4 py-3 bg-[#111] border border-[#2A2622] text-foreground text-sm placeholder:text-[#555] focus:outline-none focus:border-accent/50 transition-colors";
+const inputClass = "w-full px-4 py-3 bg-[#111] border border-border text-foreground text-sm placeholder:text-[#555] focus:outline-none focus:border-accent/50 transition-colors rounded";
 
 export function ContactForm({ dict }: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -138,13 +138,13 @@ export function ContactForm({ dict }: ContactFormProps) {
           </button>
 
           {/* Dropdown options */}
-          <div className={`absolute top-full left-0 right-0 mt-1 bg-[#111] border border-[#2A2622] shadow-2xl shadow-black/40 z-30 overflow-hidden transition-all duration-300 ease-out origin-top ${isServiceOpen ? "opacity-100 scale-y-100 translate-y-0" : "opacity-0 scale-y-95 -translate-y-1 pointer-events-none"}`}>
+          <div className={`absolute top-full left-0 right-0 mt-1 bg-[#111] border border-border shadow-2xl shadow-black/40 z-30 overflow-hidden transition-all duration-300 ease-out origin-top ${isServiceOpen ? "opacity-100 scale-y-100 translate-y-0" : "opacity-0 scale-y-95 -translate-y-1 pointer-events-none"}`}>
             {services.map((s) => (
               <button
                 key={s}
                 type="button"
                 onClick={() => { setFormData({ ...formData, service: s }); setIsServiceOpen(false); }}
-                className={`w-full text-left px-4 py-3 text-sm transition-colors duration-150 cursor-pointer ${formData.service === s ? "text-accent bg-[#1A1816]" : "text-muted hover:text-accent hover:bg-[#1A1816]"}`}
+                className={`w-full text-left px-4 py-3 text-sm transition-colors duration-150 cursor-pointer ${formData.service === s ? "text-accent bg-surface-hover" : "text-muted hover:text-accent hover:bg-surface-hover"}`}
               >
                 {s}
               </button>
@@ -163,7 +163,7 @@ export function ContactForm({ dict }: ContactFormProps) {
         <div className="flex items-center gap-2 text-red-400 text-xs"><AlertCircle className="w-3.5 h-3.5" />{dict.contact.form.error}</div>
       )}
 
-      <button type="submit" className="w-full flex items-center justify-center gap-3 bg-accent text-accent-foreground py-3.5 text-xs tracking-[0.15em] uppercase font-medium hover:bg-accent-hover transition-all duration-300 cursor-pointer group">
+      <button type="submit" className="w-full flex items-center justify-center gap-3 bg-accent text-accent-foreground py-3.5 text-xs tracking-[0.15em] uppercase font-medium hover:bg-accent-hover transition-all duration-300 cursor-pointer group rounded">
         {dict.contact.form.submit}
         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
       </button>
